@@ -1,0 +1,21 @@
+{
+  "name": "1955API",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Annie Ritch <ritchaj@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/ajritch/1955API",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  }
+}
