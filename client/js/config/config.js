@@ -1,6 +1,6 @@
 var app = angular.module('app', ['ngRoute']);
 
-app.config(function($routeProvider) {
+app.config(function($routeProvider, $locationProvider) {
 	$routeProvider
 		.when('/', {
 			templateUrl: 'static/partials/items.html'
@@ -12,6 +12,9 @@ app.config(function($routeProvider) {
 		.otherwise({
 			redirectTo: '/'
 		});
+
+    $locationProvider.html5Mode(false);
+    $locationProvider.hashPrefix('');
 });
 
 //range filter to display lots of options
