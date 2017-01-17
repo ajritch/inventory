@@ -1,47 +1,27 @@
 //server API routing
-var customers = require('./../controllers/customers.js');
-var products = require('./../controllers/products.js');
-var orders = require('./../controllers/orders.js');
+var items = require('./../controllers/items.js');
+
 
 module.exports = function(app) {
 
-	//get all customers
-	app.get('/customers', function(req, res) {
-		customers.index(req, res);
+	//get all items
+	app.get('/items', function(req, res) {
+		items.index(req, res);
 	});
 
-	//add a customer
-	app.post('/customers', function(req, res) {
-		customers.create(req, res);
+	//add an item
+	app.post('/items', function(req, res) {
+		items.create(req, res);
 	});
 
-	//delete a customer
-	app.post('/customers/:id', function(req, res) {
-		customers.delete(req, res);
+	//delete an item
+	app.post('/items/:id', function(req, res) {
+		items.delete(req, res);
 	});
 
-	//get all products
-	app.get('/products', function(req, res) {
-		products.index(req, res);
+	//get one item
+	app.get('/items/:code', function(req, res) {
+		items.get(req, res);
 	});
 
-	//add a product
-	app.post('/products', function(req, res) {
-		products.create(req, res);
-	});
-
-	//get all orders
-	app.get('/orders', function(req, res) {
-		orders.index(req, res);
-	});
-
-	//add an order
-	app.post('/orders', function(req, res) {
-		orders.create(req, res);
-	});
-
-	//delete an order
-	app.post('/orders/:id', function(req, res) {
-		orders.delete(req, res);
-	})
 }

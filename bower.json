@@ -1,12 +1,12 @@
 {
-  "name": "1955API",
+  "name": "UPCInventory",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
   "authors": [
     "Annie Ritch <ritchaj@gmail.com>"
   ],
   "license": "ISC",
-  "homepage": "https://github.com/ajritch/1955API",
+  "homepage": "https://github.com/ajritch/MEAN_MiniStore",
   "ignore": [
     "**/.*",
     "node_modules",

@@ -1,0 +1,62 @@
+<div ng-controller = 'ItemsController'>
+
+	<nav class = 'navbar navbar-default'>
+		<div class = 'container-fluid'>
+			<ul class="nav navbar-nav">
+                <li class = 'active'>
+                    <a href="#/">All Items</a>
+                </li>
+                <li>
+                    <a href="/#add">Add Item</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class = 'container-fluid'>
+
+		<div class = 'col-md-7'>
+			<h3>All Items</h3>
+			<input class = 'pull-right' type = 'text' placeholder = 'Filter...' ng-model = 'filter_name'>
+			<table class = 'table table-bordered table-striped'>
+				<thead>
+					<tr>
+						<th>
+							<a href = '' ng-click = "sortType = 'name'; sortReverse = !sortReverse">Item Name</a>
+							<span ng-show = "sortType == 'name' && !sortReverse">v</span>
+							<span ng-show = "sortType == 'name' && sortReverse">^</span>
+						</th>
+						<th>
+							<a href = '' ng-click = "sortType = 'code'; sortReverse = !sortReverse">UPC</a>
+							<span ng-show = "sortType == 'code' && !sortReverse">v</span>
+							<span ng-show = "sortType == 'code' && sortReverse">^</span>
+						</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat = "item in items | orderBy:sortType:sortReverse | filter:filter_name track by $index">
+						<td ng-bind = 'item.name'></td>
+						<td ng-bind = 'item.code'></td>
+						<td><button class = 'btn btn-sm btn-info' ng-click = 'delete(item)'>Remove from Inventory</button></td>
+					</tr>
+				</tbody>
+			</table>
+		</div> <!-- end of all items -->
+
+		<div class = 'col-md-6'>
+			<h3>Add a new item</h3>
+			<p class = 'text-danger' ng-repeat = 'error in errors' ng-bind = 'error'></p>
+			<form ng-submit = 'add()' class = 'form-horizontal'>
+				<label class = 'control-label'>Item Name:</label>
+				<input class = 'form-control' type = 'text' ng-model = 'newItem.name'>
+				<label class = 'control-label'>Item UPC:</label>
+				<input class = 'form-control' type = 'text' ng-model = 'newItem.code'>
+				<br>
+				<input type = 'submit' value = 'Add' class = 'btn btn-success pull-right'>
+			</form>
+		</div> <!-- end of add item -->
+
+	</div>
+
+</div>

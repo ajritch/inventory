@@ -1,17 +1,27 @@
 {
-  "name": "1955API",
+  "name": "UPCInventory",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "dependencies": {
+    "mongoose": "^4.5.9",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ajritch/MEAN_MiniStore.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "mongoose": "^4.5.9"
-  }
+  "bugs": {
+    "url": "https://github.com/ajritch/MEAN_MiniStore/issues"
+  },
+  "homepage": "https://github.com/ajritch/MEAN_MiniStore#readme"
 }
