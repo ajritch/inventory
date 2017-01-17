@@ -4,22 +4,22 @@ app.factory('itemFactory', function($http) {
 
 	//get all items
 	factory.index = function(callback) {
-		$http.get('/items').success(function(output) {
-			callback(output);
+		$http.get('/items').then(function(output) {
+			callback(output.data);
 		});
 	}
 
 	//add an item
 	factory.add = function(item, callback) {
-		$http.post('/items', item).success(function(output) {
-			callback(output);
+		$http.post('/items', item).then(function(output) {
+			callback(output.data);
 		})
 	}
 
 	//delete an item
 	factory.delete = function(item, callback) {
-		$http.post('/items/' + item._id).success(function(output) {
-			callback(output);
+		$http.post('/items/' + item._id).then(function(output) {
+			callback(output.data);
 		});
 	}
 
