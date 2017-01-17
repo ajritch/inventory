@@ -36,8 +36,8 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat = "item in items | orderBy:sortType:sortReverse | filter:filter_name track by $index">
-						<td ng-bind = 'item.name'></td>
-						<td ng-bind = 'item.code'></td>
+						<td ng-bind = 'item.product_name'></td>
+						<td ng-bind = 'item.upc'></td>
 						<td><button class = 'btn btn-sm btn-info' ng-click = 'delete(item)'>Remove from Inventory</button></td>
 					</tr>
 				</tbody>
@@ -49,9 +49,9 @@
 			<p class = 'text-danger' ng-repeat = 'error in errors' ng-bind = 'error'></p>
 			<form ng-submit = 'add()' class = 'form-horizontal'>
 				<label class = 'control-label'>Item Name:</label>
-				<input class = 'form-control' type = 'text' ng-model = 'newItem.name'>
+				<input class = 'form-control' type = 'text' ng-model = 'newItem.product_name'>
 				<label class = 'control-label'>Item UPC:</label>
-				<input class = 'form-control' type = 'text' ng-model = 'newItem.code'>
+				<input class = 'form-control' type = 'text' ng-model = 'newItem.upc'>
 				<br>
 				<input type = 'submit' value = 'Add' class = 'btn btn-success pull-right'>
 			</form>

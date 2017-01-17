@@ -20,9 +20,9 @@
 			<p class = 'text-danger' ng-repeat = 'error in errors' ng-bind = 'error'></p>
 			<form ng-submit = 'add()' class = 'form-horizontal'>
 				<label class = 'control-label'>Item Name:</label>
-				<input class = 'form-control' type = 'text' ng-model = 'newItem.name'>
+				<input class = 'form-control' type = 'text' ng-model = 'newItem.product_name'>
 				<label class = 'control-label'>Item UPC:</label>
-				<input class = 'form-control' type = 'text' ng-model = 'newItem.code'>
+				<input class = 'form-control' type = 'text' ng-model = 'newItem.upc'>
 				<br>
 				<input type = 'submit' value = 'Add' class = 'btn btn-success pull-right'>
 			</form>

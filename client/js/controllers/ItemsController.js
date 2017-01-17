@@ -7,10 +7,7 @@ app.controller('ItemsController', function($scope, itemFactory) {
 	function setItems(data) {
 		//check for errors	
 		$scope.errors = [];
-		//if duplicate error!
-		if (data['duplicate_error']) {
-			$scope.errors.push(data['duplicate_error']);
-		} else if (data['errors']) {
+		if (data['errors']) {
 			for(var i in data['errors']) {
 				$scope.errors.push(data['errors'][i].message);
 			}

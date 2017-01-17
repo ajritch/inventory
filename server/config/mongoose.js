@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 var fs = require('fs');
 
 //connect to db
-mongoose.connect('mongodb://localhost/upc_db');
+mongoose.connect('mongodb://localhost/upc_db2');
 
 //require all models in directory
 var models_path = __dirname + '/../models';

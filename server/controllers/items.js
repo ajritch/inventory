@@ -10,7 +10,14 @@ module.exports = (function() {
 				if (err) {
 					console.log(err);
 				} else {
-					res.json(results);
+					// console.log(results);
+					var output = [];
+					// for (var i = 0; i < results.length; i++) {
+					// 	var out = {"product_name": results[i].product_name,
+					// 				"upc": results[i].upc}
+					// 	output.push(out);
+					// }
+					res.json({"upc": results});
 				}
 			})
 		},
@@ -48,7 +55,7 @@ module.exports = (function() {
 
 		//get an item by id
 		get: function(req, res) {
-			Item.findOne({code: req.params.code}, function(err, item) {
+			Item.findOne({upc: req.params.code}, function(err, item) {
 				if (err) {
 					res.json(err);
 				} else if (!item) {
